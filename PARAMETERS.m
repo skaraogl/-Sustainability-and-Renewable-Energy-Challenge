@@ -16,6 +16,8 @@ T_INIT_OUT = 2.9;
 Conv_C_to_K = 273.15;
 % Temperature of heater / °C
 T_HEATER = 50;
+% Temperature of cooler / °C
+T_COOLER = 17;
 
 %% GEOMETRICS ---------------------------------------------------------
 % Bedroom size / m²
