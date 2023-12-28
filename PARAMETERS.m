@@ -6,6 +6,10 @@ load('TBL_TEMP')
 % TBL_TEMP = table(TBL_TEMP.DATE_yyyymmddhh, DATE_sec, ...
 %     TBL_TEMP.T_C, TBL_TEMP.RM_p100,'VariableNames',["DATE_yyyymmddhh", ...
 %     "DATE_sec","T_C","RM_p100"]);
+%%
+TBL_CO2 = table(["Sleep"; "Resting/low activity work";"Normal work";"Hardwork"], ...
+    (0:1:3)',[0.013;0.02;0.1;0.35],'VariableNames',["Activity","Activity_ID","CO2_Emiss_cmh"]);
+
 
 %% TEMPERATURES -------------------------------------------------------
 % Initial bedroom temprature / °C
@@ -18,6 +22,8 @@ Conv_C_to_K = 273.15;
 T_HEATER = 50;
 % Temperature of cooler / °C
 T_COOLER = 17;
+% Temperature of human / °C
+T_HUMAN = 37;
 
 %% GEOMETRICS ---------------------------------------------------------
 % Bedroom size / m²
@@ -38,6 +44,10 @@ P_THICK_GLASS = 0.004;
 P_THICK_BRICK = 0.175;
 % Thickness of PUR layer / m
 P_THICK_PUR = P_THICK_WALL - P_THICK_BRICK;
+% Surface area of human / m²
+P_AREA_HUMAN = 1.73;
+% Volume of bedroom air / m³
+P_V_BDR = P_AREA_BDR*P_RM_HEIGHT;
 
 %% DENSITIES ---------------------------------------------------------
 % Air density at 20 °C / (kg/m³)
@@ -48,6 +58,8 @@ P_DENSITY_GLASS = 0.0025;
 P_DENSITY_BRICK = 2/(10^-3);
 % Density of PUR / (kg/m³)
 P_DENSITY_PUR = 150;
+% Density of CO2 / (kg/m³)
+P_DENSITY_CO2 = 1.98;
 
 %% MASSES ------------------------------------------------------------
 % Mass of inside air / kg
@@ -63,6 +75,8 @@ P_M_WINDOW_SPEC = 20;
 % Mass of 2-layer glass window / kg
 % P_M_WINDOW = P_AREA_WIN*P_THICK_GLASS*P_DENSITY_GLASS*2;
 P_M_WINDOW = P_AREA_WIN*P_M_WINDOW_SPEC;
+% Weight of human / kg
+P_M_HUMAN = 80;
 
 %% THERMODYNAMICS -----------------------------------------------------
 % Heat capacity of air under room conditions / J/(g*K)
@@ -93,3 +107,7 @@ P_CP_BRICK = 920;
 P_CP_PUR = 1400;
 % Heat capacity wall / J/(kg*K)
 P_CP_WALL = (P_M_BRICK/P_M_WALL)*P_CP_BRICK+(P_M_PUR/P_M_WALL)*P_CP_PUR;
+% Heat capacity of human / (kJ/kg*K)
+P_CP_HUMAN = 2.98;
+% Heat transfer coefficient human / (W/(m²*K))
+P_A_HUMAN = 4.5;
