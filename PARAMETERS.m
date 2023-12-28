@@ -1,7 +1,15 @@
 cd('C:\Users\Selim\SK_Code\-Sustainability-and-Renewable-Energy-Challenge')
+%% TABLES
+addpath('C:\Users\Selim\SK_Code\-Sustainability-and-Renewable-Energy-Challenge\Data')
+load('TBL_TEMP')
+
+% TBL_TEMP = table(TBL_TEMP.DATE_yyyymmddhh, DATE_sec, ...
+%     TBL_TEMP.T_C, TBL_TEMP.RM_p100,'VariableNames',["DATE_yyyymmddhh", ...
+%     "DATE_sec","T_C","RM_p100"]);
+
 %% TEMPERATURES -------------------------------------------------------
 % Initial bedroom temprature / °C
-T_INIT_BDR = 16; 
+T_INIT_BDR = 18; 
 % Initial outside temperature (winter) / °C
 T_INIT_OUT = 2.9;
 % Convert Celsius to Kelvin
