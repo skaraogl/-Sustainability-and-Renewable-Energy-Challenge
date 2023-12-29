@@ -2,13 +2,14 @@ cd('C:\Users\Selim\SK_Code\-Sustainability-and-Renewable-Energy-Challenge')
 %% TABLES
 addpath('C:\Users\Selim\SK_Code\-Sustainability-and-Renewable-Energy-Challenge\Data')
 load('TBL_TEMP')
+load('TBL_CO2')
 
 % TBL_TEMP = table(TBL_TEMP.DATE_yyyymmddhh, DATE_sec, ...
 %     TBL_TEMP.T_C, TBL_TEMP.RM_p100,'VariableNames',["DATE_yyyymmddhh", ...
 %     "DATE_sec","T_C","RM_p100"]);
 %%
-TBL_CO2 = table(["Sleep"; "Resting/low activity work";"Normal work";"Hardwork"], ...
-    (0:1:3)',[0.013;0.02;0.1;0.35],'VariableNames',["Activity","Activity_ID","CO2_Emiss_cmh"]);
+% TBL_CO2 = table(["Sleep"; "Resting/low activity work";"Normal work";"Hardwork"], ...
+%     (0:1:3)',[0.013;0.02;0.1;0.35],'VariableNames',["Activity","Activity_ID","CO2_Emiss_cmh"]);
 
 
 %% TEMPERATURES -------------------------------------------------------
@@ -24,6 +25,10 @@ T_HEATER = 50;
 T_COOLER = 17;
 % Temperature of human / °C
 T_HUMAN = 37;
+
+%% HUMIDITY -----------------------------------------------------------
+% Initial Rel. humidity in the bedroom / %
+RH_INIT_BDR = 40;
 
 %% GEOMETRICS ---------------------------------------------------------
 % Bedroom size / m²
