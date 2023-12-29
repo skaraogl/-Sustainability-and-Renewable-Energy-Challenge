@@ -25,10 +25,8 @@ T_HEATER = 50;
 T_COOLER = 17;
 % Temperature of human / °C
 T_HUMAN = 37;
-
-%% HUMIDITY -----------------------------------------------------------
-% Initial Rel. humidity in the bedroom / %
-RH_INIT_BDR = 40;
+% Temperature of breath / °C
+T_BREATH = 34;
 
 %% GEOMETRICS ---------------------------------------------------------
 % Bedroom size / m²
@@ -53,6 +51,14 @@ P_THICK_PUR = P_THICK_WALL - P_THICK_BRICK;
 P_AREA_HUMAN = 1.73;
 % Volume of bedroom air / m³
 P_V_BDR = P_AREA_BDR*P_RM_HEIGHT;
+% Diameter of duct / m
+P_DIA_DUCT = 0.15;
+% Cross-sectional area of duct / m²
+P_AREA_DUCT = pi/4*P_DIA_DUCT^2;
+% Max. threshhold of CO2 amount in air / ppm
+P_MAX_CO2 = 1000;
+% Initial CO2 amount in air / ppm
+P_INIT_CO2 = 420;
 
 %% DENSITIES ---------------------------------------------------------
 % Air density at 20 °C / (kg/m³)
@@ -65,6 +71,14 @@ P_DENSITY_BRICK = 2/(10^-3);
 P_DENSITY_PUR = 150;
 % Density of CO2 / (kg/m³)
 P_DENSITY_CO2 = 1.98;
+
+%% AIR PROPERTIES -----------------------------------------------------
+% Initial Rel. humidity in the bedroom / %
+RH_INIT_BDR = 40;
+% Vapor produced by human / (kg/sec)
+P_M_HUMAN_VAPOR = 500*10^-3/(24*3600);
+% CO2 emitted by human / (kg/sec)
+P_M_HUMAN_CO2 = 0.02*P_DENSITY_CO2/3600;
 
 %% MASSES ------------------------------------------------------------
 % Mass of inside air / kg
@@ -116,3 +130,9 @@ P_CP_WALL = (P_M_BRICK/P_M_WALL)*P_CP_BRICK+(P_M_PUR/P_M_WALL)*P_CP_PUR;
 P_CP_HUMAN = 2.98;
 % Heat transfer coefficient human / (W/(m²*K))
 P_A_HUMAN = 4.5;
+% Heat gain human / W
+P_HUMAN = 100;
+% Heat produced by desktop pc / W
+P_PC = 250;
+% Mass air flow of HVAC system / kg/sec
+P_M_AIR_FLOW = 0.1;
