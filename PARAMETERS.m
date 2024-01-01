@@ -22,7 +22,7 @@ Conv_C_to_K = 273.15;
 % Temperature of heater / °C
 T_HEATER = 50;
 % Temperature of cooler / °C
-T_COOLER = 17;
+T_COOLER = 12;
 % Temperature of human / °C
 T_HUMAN = 37;
 % Temperature of breath / °C
@@ -113,7 +113,7 @@ P_SPEC_HEAT = 45;
 % Max. heating power / W
 P_MAX_HEAT = P_SPEC_HEAT*P_AREA_BDR;
 % Air flow of heater / (kg/sec)
-P_HEATER_AIR_FLOW = 1;
+P_AC_AIR_FLOW = 1;
 % Emissivity of glass / 1
 P_EM_GLASS = 0.94;
 % Emissivity of plastered brick wall / 1
@@ -135,4 +135,4 @@ P_HUMAN = 100;
 % Heat produced by desktop pc / W
 P_PC = 250;
 % Mass air flow of HVAC system / kg/sec
-P_M_AIR_FLOW = 0.1;
+P_HANDLER_AIR_FLOW = 0.1;
