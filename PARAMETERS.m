@@ -11,10 +11,9 @@ load('TBL_CO2')
 % TBL_CO2 = table(["Sleep"; "Resting/low activity work";"Normal work";"Hardwork"], ...
 %     (0:1:3)',[0.013;0.02;0.1;0.35],'VariableNames',["Activity","Activity_ID","CO2_Emiss_cmh"]);
 
-
 %% TEMPERATURES -------------------------------------------------------
 % Initial bedroom temprature / °C
-T_INIT_BDR = 18; 
+T_INIT_BDR = 22; 
 % Initial outside temperature (winter) / °C
 T_INIT_OUT = 2.9;
 % Convert Celsius to Kelvin
