@@ -1,8 +1,14 @@
 cd('C:\Users\Selim\SK_Code\-Sustainability-and-Renewable-Energy-Challenge')
 %% TABLES
 addpath('C:\Users\Selim\SK_Code\-Sustainability-and-Renewable-Energy-Challenge\Data')
+addpath('C:\Users\Selim\SK_Code\-Sustainability-and-Renewable-Energy-Challenge\Data\SOL\East')
+addpath('C:\Users\Selim\SK_Code\-Sustainability-and-Renewable-Energy-Challenge\Data\SOL\North')
+addpath('C:\Users\Selim\SK_Code\-Sustainability-and-Renewable-Energy-Challenge\Data\SOL\South')
 load('TBL_TEMP')
 load('TBL_CO2')
+load('TBL_SOL_SOUTH')
+load('TBL_SOL_EAST')
+load('TBL_SOL_NORTH')
 
 % TBL_TEMP = table(TBL_TEMP.DATE_yyyymmddhh, DATE_sec, ...
 %     TBL_TEMP.T_C, TBL_TEMP.RM_p100,'VariableNames',["DATE_yyyymmddhh", ...
@@ -58,6 +64,100 @@ P_AREA_DUCT = pi/4*P_DIA_DUCT^2;
 P_MAX_CO2 = 1000;
 % Initial CO2 amount in air / ppm
 P_INIT_CO2 = 420;
+% ==============================
+% Area of bedroom 1 / m²
+P_AREA_BDR1 = 3.87^2;
+% Area of bedroom 2 / m²
+P_AREA_BDR2 = 3.87*4.5;
+% Area of hallway / m²
+P_AREA_HALL = 2*6;
+% Area of bath / m²
+P_AREA_BATH = 2*4;
+% Area of living room / m²
+P_AREA_LVR = 4.13*6;
+% Area of kitchen / m²
+P_AREA_KIT = 4.13*4;
+% Door height / m
+P_H_DOOR = 2.1;
+% Door width / m
+P_W_DOOR = 1;
+% Height of normal windows / m
+P_H_WIN_NORM = 1.3;
+% Height of window door / m
+P_H_WIN_DOOR = 2.2;
+% Width of bedroom windows / m
+P_W_WIN_BDRS = 2;
+% Width of bathroom window / m
+P_W_WIN_BATH = 1;
+% Width of living room window / m
+P_W_WIN_LVR = 5;
+% Width of kitchen window / m
+P_W_WIN_KIT = 3;
+% Thickness of inner brick walls / m
+P_THICK_INNER_WALL_BR = 0.115;
+% Thickness of inner porous concrete walls / m
+P_THICK_INNER_WALL_PC = 0.28;
+% Thickness of wooden door / m
+P_THICK_DOOR = 0.04;
+% Area of bedroom window / m²
+P_AREA_WIN_BDRS = P_H_WIN_NORM*P_W_WIN_BDRS;
+% Area of bathroom window / m²
+P_AREA_WIN_BATH = P_H_WIN_NORM*P_W_WIN_BATH;
+% Area of living room window / m²
+P_AREA_WIN_LVR = P_H_WIN_DOOR*P_W_WIN_LVR;
+% Area of kitchen window / m²
+P_AREA_WIN_KIT = P_H_WIN_DOOR*P_W_WIN_KIT;
+% Area of single door / m²
+P_AREA_SING_DOOR = P_H_DOOR*P_W_DOOR;
+% Area of double door / m²
+P_AREA_DBL_DOOR = P_AREA_SING_DOOR*2;
+% Area of outer wall bedroom 1 / m²
+P_AREA_OUTER_WALL_BDR1 = 3.87*2*P_RM_HEIGHT - P_AREA_WIN_BDRS;
+% Area of outer wall bedroom 2 / m²
+P_AREA_OUTER_WALL_BDR2 = (4.5+3.87)*P_RM_HEIGHT - P_AREA_WIN_BDRS*2;
+% Area of outer wall hallway / m²
+P_AREA_OUTER_WALL_HALL = 2*P_RM_HEIGHT - P_AREA_SING_DOOR;
+% Area of outer wall bathroom / m²
+P_AREA_OUTER_WALL_BATH = (1.63+2)*P_RM_HEIGHT - P_AREA_WIN_BATH;
+% Area of outer wall living room / m²
+P_AREA_OUTER_WALL_LVR = (4.13+6)*P_RM_HEIGHT - P_AREA_WIN_LVR;
+% Area of outer wall kitchen / m²
+P_AREA_OUTER_WALL_KIT = (4+4.13)*P_RM_HEIGHT - P_AREA_WIN_KIT;
+% Area of inner wall between bedroom 1 and 2 / m²
+P_AREA_WALL_BDR1_BDR2 = 3.87*P_RM_HEIGHT;
+% Area of inner wall between bedroom 1 and hallway / m²
+P_AREA_WALL_BDR1_HALL = 3.87*P_RM_HEIGHT - P_AREA_SING_DOOR;
+% Area of inner wall between bedroom 2 and hallway / m²
+P_AREA_WALL_BDR2_HALL = 2.13*P_RM_HEIGHT - P_AREA_SING_DOOR;
+% Area of inner wall between bedroom 2 and bathroom / m²
+P_AREA_WALL_BDR2_BATH = 2.37*P_RM_HEIGHT;
+% Area of inner wall between hallway and bathroom / m²
+P_AREA_WALL_HALL_BATH = 2*P_RM_HEIGHT - P_AREA_SING_DOOR;
+% Area of inner wall between hallway and living room / m²
+P_AREA_WALL_HALL_LVR = 6*P_RM_HEIGHT - P_AREA_DBL_DOOR;
+% Area of inner wall between bathroom and kitchen / m²
+P_AREA_WALL_BATH_KIT = 4*P_RM_HEIGHT;
+% Area of inner wall between living room and kitchen / m²
+P_AREA_WALL_LVR_KIT = 4.13*P_RM_HEIGHT - P_AREA_DBL_DOOR;
+% Thickness of concrete ceiling with thermal insulation / m
+P_THICK_CEIL = 0.2;
+
+% North-side wall area of bedroom 1 / m²
+P_AREA_NORTH_WALL_BDR1 = 3.87*P_RM_HEIGHT - P_AREA_WIN_BDRS;
+% North-side wall area of bedroom 2 / m²
+P_AREA_NORTH_WALL_BDR2 = 4.5*P_RM_HEIGHT - P_AREA_WIN_BDRS;
+% North-side wall area of bathroom / m²
+P_AREA_NORTH_WALL_BATH = 1.63*P_RM_HEIGHT;
+% East-side wall area of bedroom 2 / m²
+P_AREA_EAST_WALL_BDR2 = 3.87*P_RM_HEIGHT - P_AREA_WIN_BDRS;
+% East-side wall area of bathroom / m²
+P_AREA_EAST_WALL_BATH = 2*P_RM_HEIGHT - P_AREA_WIN_BATH;
+% East-side wall area of kitchen / m²
+P_AREA_EAST_WALL_KIT = 4.13*P_RM_HEIGHT;
+% South-side wall area of kitchen / m²
+P_AREA_SOUTH_WALL_KIT = 4*P_RM_HEIGHT - P_AREA_WIN_KIT;
+% South-side wall area of living room / m²
+P_AREA_SOUTH_WALL_LVR = 6*P_RM_HEIGHT - P_AREA_WIN_LVR;
 
 %% DENSITIES ---------------------------------------------------------
 % Air density at 20 °C / (kg/m³)
@@ -70,6 +170,8 @@ P_DENSITY_BRICK = 2/(10^-3);
 P_DENSITY_PUR = 150;
 % Density of CO2 / (kg/m³)
 P_DENSITY_CO2 = 1.98;
+% Density of porous concrete / (kg/m³)
+P_DENSITY_PC = 1600;
 
 %% AIR PROPERTIES -----------------------------------------------------
 % Initial Rel. humidity in the bedroom / %
@@ -95,6 +197,19 @@ P_M_WINDOW_SPEC = 20;
 P_M_WINDOW = P_AREA_WIN*P_M_WINDOW_SPEC;
 % Weight of human / kg
 P_M_HUMAN = 80;
+% ==============================
+% Air mass in bedroom 1 / kg
+P_M_AIR_BDR1 = P_AREA_BDR1*P_RM_HEIGHT*P_DENSITY_AIR;
+% Air mass in bedroom 2 / kg
+P_M_AIR_BDR2 = P_AREA_BDR2*P_RM_HEIGHT*P_DENSITY_AIR;
+% Air mass in hallway / kg
+P_M_AIR_HALL = P_AREA_HALL*P_RM_HEIGHT*P_DENSITY_AIR;
+% Air mass in bathroom / kg
+P_M_AIR_BATH = P_AREA_BATH*P_RM_HEIGHT*P_DENSITY_AIR;
+% Air mass in living room / kg
+P_M_AIR_LVR = P_AREA_LVR*P_RM_HEIGHT*P_DENSITY_AIR;
+% Air mass in kitchen / kg
+P_M_AIR_KIT = P_AREA_KIT*P_RM_HEIGHT*P_DENSITY_AIR;
 
 %% THERMODYNAMICS -----------------------------------------------------
 % Heat capacity of air under room conditions / J/(g*K)
@@ -103,6 +218,14 @@ P_CP_AIR = 1012;
 U_WALL = 0.32;
 % U-value (thermal transmittance) of insulated glass window / (W/(m²*K))
 U_WINDOW = 3.0;
+% U-value of inner wall made out of bricks / (W/(m²*K))
+U_INNER_WALL_BR = 3;
+% U-value of inner wall made out of porous concrete / (W/(m²*K))
+U_INNER_WALL_PC = 0.6;
+% U-value of wooden door / (W/(m²*K))
+U_DOOR = 3.49;
+% U-value of concrete ceiling with thermal insulation / (W/(m²*K))
+U_CEIL = 1.1;
 % Thermal resistance of wall / (K/W)
 R_WALL = 1/(U_WALL*P_AREA_WALL);
 % Thermal resistance of window / (K/W)
@@ -130,8 +253,10 @@ P_CP_HUMAN = 2.98;
 % Heat transfer coefficient human / (W/(m²*K))
 P_A_HUMAN = 4.5;
 % Heat gain human / W
-P_HUMAN = 100;
+P_HUMAN = 60;
 % Heat produced by desktop pc / W
 P_PC = 250;
 % Mass air flow of HVAC system / kg/sec
 P_HANDLER_AIR_FLOW = 0.1;
+% Heat capacity of porous concrete / J/(kg*K)
+P_CP_PC = 900;

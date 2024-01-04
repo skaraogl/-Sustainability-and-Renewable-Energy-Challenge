@@ -1,0 +1,38 @@
+Latitude (decimal degrees):	50.940
+Longitude (decimal degrees):	6.956
+Radiation database:	PVGIS-SARAH2
+
+Results for:	October
+Slope of plane (deg.):	90
+Azimuth (orientation) of plane (deg.):	0
+time(UTC+1)		G(i)		Gb(i)		Gd(i)
+00:00		0.0		0.0		0.0
+01:00		0.0		0.0		0.0
+02:00		0.0		0.0		0.0
+03:00		0.0		0.0		0.0
+04:00		0.0		0.0		0.0
+05:00		0.0		0.0		0.0
+06:00		0.0		0.0		0.0
+07:00		12.25		6.79		4.55
+08:00		132.65		77.02		46.68
+09:00		234.71		138.47		79.17
+10:00		304.54		185.55		96.44
+11:00		364.32		220.43		116.2
+12:00		388.83		239.56		119.93
+13:00		357.87		219.04		111.66
+14:00		330.22		199.91		105.72
+15:00		253.65		152.55		82.86
+16:00		174.99		104.66		58.84
+17:00		45.16		26.95		15.41
+18:00		0.0		0.0		0.0
+19:00		0.0		0.0		0.0
+20:00		0.0		0.0		0.0
+21:00		0.0		0.0		0.0
+22:00		0.0		0.0		0.0
+23:00		0.0		0.0		0.0
+
+G(i):  Global irradiance on a fixed plane (W/m2)
+Gb(i): Direct irradiance on a fixed plane (W/m2)
+Gd(i): Diffuse irradiance on a fixed plane (W/m2)
+
+PVGIS (c) European Union, 2001-2023
