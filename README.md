@@ -11,10 +11,13 @@ Please add the following items:
 # Project details
 To accomplish the task of adequately control, model, design and simulate a modern HVAC system multiple iteration stages were passed through. First a simple one-room thermal Simscape model was developed. Later moist are properties were included. For the final stage a 4-room apartment was developed (see below).
 ![image](https://github.com/skaraogl/-Sustainability-and-Renewable-Energy-Challenge/assets/154832924/4080298f-c592-4082-a85b-f2e8a6c6df30)
+
 The measurements can be taken from below drawing:
 ![image](https://github.com/skaraogl/-Sustainability-and-Renewable-Energy-Challenge/assets/154832924/0d0642fd-6c61-491b-8399-3e0bf29cdcda)
+
 The apartment imitates a typical german 4-floor apartment block. It has an area of 108.8 m including a balcony. The apartment is inhabitant by a family of 4: 2 children and 2 adults. Bedroom 1 belongs to the children and bedroom 2 to the adults. Only the two bedrooms and the living room is air-conditioned. Additionaly an air-handling unit is included and the map of the air flow can be taken from the image below.
 ![image](https://github.com/skaraogl/-Sustainability-and-Renewable-Energy-Challenge/assets/154832924/7935ce11-48a4-4215-bc2c-d59cc7a1926e)
+
 Fresh and new air gets introduced from bedroom 1, 2 and the living room and gets blown out from the bathroom and the kitchen. For a more realistic simulation an average weekday routine of all inhabitants is implemented (further informations are in the model). Furthermore the effects of solar radiation can be switched and off in the simulation. 
 
 # How to run section
