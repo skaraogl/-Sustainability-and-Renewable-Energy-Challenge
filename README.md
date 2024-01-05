@@ -9,10 +9,9 @@ Please add the following items:
 
 
 # Project details
-To accomplish the task of adequately control, model, design and simulate a modern HVAC system multiple iteration stages were passed through. First a simple one-room thermal Simscape model was developed. Later moist are properties were included. For the final stage a 4-room apartment was developed (see below).
+To accomplish the task of adequately control, model, design and simulate a modern HVAC system multiple iteration stages were passed through. First a simple one-room thermal Simscape model was developed. Later moist are properties were included. For the final stage a 4-room apartment was developed (see below).\n
 ![image](https://github.com/skaraogl/-Sustainability-and-Renewable-Energy-Challenge/assets/154832924/4080298f-c592-4082-a85b-f2e8a6c6df30)
-
-The measurements can be taken from below drawing:
+The measurements can be taken from below drawing:\n
 ![image](https://github.com/skaraogl/-Sustainability-and-Renewable-Energy-Challenge/assets/154832924/0d0642fd-6c61-491b-8399-3e0bf29cdcda)
 
 The apartment imitates a typical german 4-floor apartment block. It has an area of 108.8 m including a balcony. The apartment is inhabitant by a family of 4: 2 children and 2 adults. Bedroom 1 belongs to the children and bedroom 2 to the adults. Only the two bedrooms and the living room is air-conditioned. Additionaly an air-handling unit is included and the map of the air flow can be taken from the image below.
