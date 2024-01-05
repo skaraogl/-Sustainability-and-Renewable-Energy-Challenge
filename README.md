@@ -40,9 +40,17 @@ The simulation can be adjusted and varied by the control panel, which is segment
 
 # Demo
 ## Control panel overview
+https://github.com/skaraogl/-Sustainability-and-Renewable-Energy-Challenge/assets/154832924/9db50f72-6082-49ff-9e37-df074bbd9b34
 
 ## Simulation of hottest day in 2023 (July 15th 2023) in Cologne, Germany.
+https://github.com/skaraogl/-Sustainability-and-Renewable-Energy-Challenge/assets/154832924/138de5fb-c1bf-4253-9f8e-490f1ef1bf59
 
-  
 # Reference
-Add reference papers, data, or supporting material that has been used, if any.
+Following references were used:
+- https://de.mathworks.com/help/simscape/ug/house-heating-system.html
+- https://de.mathworks.com/help/simscape/ug/vehicle-hvac-system.html
+- https://www.matlabexpo.com/content/dam/mathworks/mathworks-dot-com/images/events/matlabexpo/de/2017/gebaude-und-anlagensimulation-mit-matlab-und-simulink-am-beispiel-des-ffg-projekts-saluh.pdf
+The sources of used parameter values are included in the following doc-file:
+
+[ParameterList.docx](https://github.com/skaraogl/-Sustainability-and-Renewable-Energy-Challenge/files/13845761/ParameterList.docx)
+
