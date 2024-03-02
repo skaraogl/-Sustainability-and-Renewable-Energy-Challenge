@@ -10,7 +10,7 @@ Please add the following items:
 
 # Project details
 ## Framework
-To accomplish the task of adequately to control, model, design and simulate a modern HVAC system multiple iteration stages were passed through. First a simple one-room thermal Simscape model was developed. Later moist air properties were included. For the final stage a 4-room apartment was developed (see below).
+To accomplish the task of adequately to control, model, design and simulate a modern HVAC system multiple iteration stages were passed through. First a simple one-room thermal Simscape model was developed. Later moist air properties were included. For the final stage a 3-room apartment was developed (see below).
 
 ![image](https://github.com/skaraogl/-Sustainability-and-Renewable-Energy-Challenge/assets/154832924/4080298f-c592-4082-a85b-f2e8a6c6df30)
 
@@ -18,7 +18,7 @@ The measurements can be taken from below drawing:
 
 ![image](https://github.com/skaraogl/-Sustainability-and-Renewable-Energy-Challenge/assets/154832924/0d0642fd-6c61-491b-8399-3e0bf29cdcda)
 
-The apartment imitates a typical german 4-floor apartment block. It has an area of 108.8 m² including a balcony. The outer walls are thermally insulated consisting of a brick layer plus an PUR layer. The internal walls can be distingueshed into 2 groups: First load-bearing and second non-load-bearing walls. The load-bearing walls are from brick and the non-load-bearing walls are from porous/pervious concrete. The ceiling is from concrete containing a generic thermal insulation layer. Closed doors are not included in the model to ease the simulation. Currently the simulation time is 1 week and the sample time is 1 sec. Because previously the simulation would encounter an error after the inclusion of the moist air Simcape domain, in the Solver Configuration block the "Backward Euler" local solver with a sample time of 1 sec was set (see image below) 
+The apartment imitates a typical german 3-room apartment. It has an area of 108.8 m² including a balcony. The outer walls are thermally insulated consisting of a brick layer plus an PUR layer. The internal walls can be distingueshed into 2 groups: First load-bearing and second non-load-bearing walls. The load-bearing walls are from brick and the non-load-bearing walls are from porous/pervious concrete. The ceiling is from concrete containing a generic thermal insulation layer. Closed doors are not included in the model to ease the simulation. Currently the simulation time is 1 week and the sample time is 1 sec. Because previously the simulation would encounter an error after the inclusion of the moist air Simcape domain, in the Solver Configuration block the "Backward Euler" local solver with a sample time of 1 sec was set (see image below) 
 
 ![image](https://github.com/skaraogl/-Sustainability-and-Renewable-Energy-Challenge/assets/154832924/6dc1dbec-a76b-4231-87c2-2588f3aed2d1)
 
