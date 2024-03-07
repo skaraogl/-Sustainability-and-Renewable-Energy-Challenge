@@ -10,7 +10,7 @@ Please add the following items:
 
 # Project details
 ## Framework
-To accomplish the task of adequately to control, model, design and simulate a modern HVAC system multiple iteration stages were passed through. First a simple one-room thermal Simscape model was developed. Later moist air properties were included. For the final stage a 4-room apartment was developed (see below).
+To accomplish the task of adequately to control, model, design and simulate a modern HVAC system multiple iteration stages were passed through. First a simple one-room thermal Simscape model was developed. Later moist air properties were included. For the final stage a 3-room apartment was developed (see below).
 
 ![image](https://github.com/skaraogl/-Sustainability-and-Renewable-Energy-Challenge/assets/154832924/4080298f-c592-4082-a85b-f2e8a6c6df30)
 
@@ -18,7 +18,7 @@ The measurements can be taken from below drawing:
 
 ![image](https://github.com/skaraogl/-Sustainability-and-Renewable-Energy-Challenge/assets/154832924/0d0642fd-6c61-491b-8399-3e0bf29cdcda)
 
-The apartment imitates a typical german 4-floor apartment block. It has an area of 108.8 m² including a balcony. The outer walls are thermally insulated consisting of a brick layer plus an PUR layer. The internal walls can be distingueshed into 2 groups: First load-bearing and second non-load-bearing walls. The load-bearing walls are from brick and the non-load-bearing walls are from porous/pervious concrete. The ceiling is from concrete containing a generic thermal insulation layer. Closed doors are not included in the model to ease the simulation. Currently the simulation time is 1 week and the sample time is 1 sec. Because previously the simulation would encounter an error after the inclusion of the moist air Simcape domain, in the Solver Configuration block the "Backward Euler" local solver with a sample time of 1 sec was set (see image below) 
+The apartment imitates a typical german 3-room apartment. It has an area of 108.8 m² including a balcony. The outer walls are thermally insulated consisting of a brick layer plus an PUR layer. The internal walls can be distingueshed into 2 groups: First load-bearing and second non-load-bearing walls. The load-bearing walls are from brick and the non-load-bearing walls are from porous/pervious concrete. The ceiling is from concrete containing a generic thermal insulation layer. Closed doors are not included in the model to ease the simulation. Currently the simulation time is 1 week and the sample time is 1 sec. Because previously the simulation would encounter an error after the inclusion of the moist air Simcape domain, in the Solver Configuration block the "Backward Euler" local solver with a sample time of 1 sec was set (see image below) 
 
 ![image](https://github.com/skaraogl/-Sustainability-and-Renewable-Energy-Challenge/assets/154832924/6dc1dbec-a76b-4231-87c2-2588f3aed2d1)
 
@@ -73,6 +73,11 @@ https://github.com/skaraogl/-Sustainability-and-Renewable-Energy-Challenge/asset
 
 ## Simulation of hottest day in 2023 (July 15th 2023) in Cologne, Germany.
 Example demonstration of a simulation for the hottest day in 2023 in Cologne, Germany. The PI controller holds the temperatures in bedroom 1, 2 and the living room almost constant at 20 °C reference temperature. Only in short periods the temperatures increase. This is due to the de-humidifier. Because the humidity levels are too high the controller is deactived, resulting in increasing indoor temperatures, because of the higher outdoor temperatures. The humidity levels of the 3 important rooms is at 85 % at their highest limit and the CO2 levels are mostly kept under the limit of 2000 ppm.
+
+### Legend
+TEMPERATURE | HUMIDITY | CO2
+--- | --- | ---
+![image](https://github.com/skaraogl/-Sustainability-and-Renewable-Energy-Challenge/assets/154832924/834cfca5-548f-4c79-8085-ed024b71739c) | ![image](https://github.com/skaraogl/-Sustainability-and-Renewable-Energy-Challenge/assets/154832924/fe10b743-ba65-4dee-a86c-d40133a91d24) | ![image](https://github.com/skaraogl/-Sustainability-and-Renewable-Energy-Challenge/assets/154832924/329e5231-bebf-40c6-bf86-602bb0de1ac6)
 
 https://github.com/skaraogl/-Sustainability-and-Renewable-Energy-Challenge/assets/154832924/138de5fb-c1bf-4253-9f8e-490f1ef1bf59
 
